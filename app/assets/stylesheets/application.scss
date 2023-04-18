@@ -1,1 +1,15 @@
 @import "bootstrap";
+
+header {
+    margin-bottom: 50px;
+}
+
+nav.navbar {
+    background-color: #A31621;
+}
+
+nav.navbar a {
+    text-decoration: none;
+    color: white;
+    padding-inline: 10px;
+}
