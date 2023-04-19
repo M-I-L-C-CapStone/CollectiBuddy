@@ -15,7 +15,7 @@ import mockCollections from "./mockCollections"
     const [collections, setCollections] = useState([])
   
     useEffect(()=>{
-        readCollections()
+      readCollections()
     },[])
   
     const readCollections = () => {
@@ -25,8 +25,8 @@ import mockCollections from "./mockCollections"
       .catch((error)=> console.log(error))
     }
     
-      const updateCollection = (collection, id) => {
-    fetch(`/collections/${id}`, {
+    const updateCollection = (collection, id) => {
+      fetch(`/collections/${id}`, {
       body: JSON.stringify(collection),
       headers: {
         "Content-Type": "application/json",
