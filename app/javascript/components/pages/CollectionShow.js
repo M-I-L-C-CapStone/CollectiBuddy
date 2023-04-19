@@ -32,7 +32,7 @@ const CollectionShow = ({collections}) => {
             </CardSubtitle>
           </CardBody>
           <Button>
-            <NavLink to={"/collectionedit"}>
+            <NavLink to={`/collectionedit/${currentCollection.id}`}>
               Edit
             </NavLink>
           </Button>
