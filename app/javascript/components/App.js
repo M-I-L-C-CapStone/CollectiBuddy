@@ -9,7 +9,7 @@ import CollectionEdit from "./pages/CollectionEdit"
 import CollectionNew from "./pages/CollectionNew"
 import AboutUs from "./pages/AboutUs"
 import NotFound from "./pages/NotFound"
-import mockCollections from './mockCollections'
+import mockCollections from "./mockCollections"
 
   const App = (props) => {
     const [collections, setCollections] = useState([])
