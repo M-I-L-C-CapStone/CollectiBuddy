@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect, useState}from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
@@ -11,8 +11,21 @@ import AboutUs from "./pages/AboutUs"
 import NotFound from "./pages/NotFound"
 import mockCollections from "./mockCollections"
 
-const App = (props) => {
-  const updateCollection = (collection, id) => {
+  const App = (props) => {
+    const [collections, setCollections] = useState([])
+  
+    useEffect(()=>{
+        readCollections()
+    },[])
+  
+    const readCollections = () => {
+      fetch("/collections")
+      .then((response)=> response.json())
+      .then((payload)=> setCollections(payload))
+      .catch((error)=> console.log(error))
+    }
+    
+      const updateCollection = (collection, id) => {
     fetch(`/collections/${id}`, {
       body: JSON.stringify(collection),
       headers: {
@@ -24,26 +37,23 @@ const App = (props) => {
       .then((payload) => readCollections())
       .catch((errors) => console.log("Collection update errors:", errors))
   }
+  
+
   return (
     <>
       <BrowserRouter>
-        <Header {...props} />
+        <Header {...props}/>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/collectionindex" element={<ProtectedIndex />} />
-          <Route path="/collectionshow/:id" element={<CollectionShow />} />
-          <Route path="/collectionnew" element={<CollectionNew />} />
+          <Route path="/" element={<Home />}/>
+          <Route path="/collectionindex" element={<ProtectedIndex collections={collections} current_user={props.current_user} />}/>
+          <Route path="/collectionshow/:id" element={<CollectionShow />}/>
+          <Route path="/collectionnew" element={<CollectionNew />}/>
           <Route
             path="/collectionedit/:id"
-            element={
-              <CollectionEdit
-                collections={collections}
-                updateCollection={updateCollection}
-              />
-            }
-          />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="*" element={<NotFound />} />
+            element={<CollectionEdit collections={collections} updateCollection={updateCollection}/>}
+            />
+          <Route path="/aboutus" element={<AboutUs />}/>
+          <Route path="*" element={<NotFound />}/>
         </Routes>
         <Footer />
       </BrowserRouter>
