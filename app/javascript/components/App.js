@@ -33,7 +33,7 @@ import mockCollections from "./mockCollections"
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/collectionindex" element={<ProtectedIndex collections={collections} current_user={props.current_user} />}/>
-          <Route path="/collectionshow/:id" element={<CollectionShow />}/>
+          <Route path="/collectionshow/:id" element={<CollectionShow collections={collections}/>}/>
           <Route path="/collectionnew" element={<CollectionNew />}/>
           <Route path="/collectionedit/:id" element={<CollectionEdit />}/>
           <Route path="/aboutus" element={<AboutUs />}/>
