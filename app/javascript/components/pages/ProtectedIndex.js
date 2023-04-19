@@ -3,7 +3,6 @@ import {Card, CardBody, Button, CardTitle, CardSubtitle} from "reactstrap"
 import {NavLink} from 'react-router-dom'
 
 const ProtectedIndex = ({collections, current_user }) => {
-console.log(collections)
   const myCollections = collections?.filter(collection => current_user?.id === collection.user_id)
   return (
     <>
