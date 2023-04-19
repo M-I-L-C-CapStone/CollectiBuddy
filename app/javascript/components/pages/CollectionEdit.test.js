@@ -22,7 +22,7 @@ describe("<CollectionEdit />", () => {
     const pageTitle = screen.getByText("Edit Cpt. Rex")
     expect(pageTitle).toBeInTheDocument()
   })
-  it("has fillable forms for updating an apartment", () => {
+  it("has fillable forms for updating a collection", () => {
     const formAddress = screen.getByText(/name/i)
     expect(formAddress.getAttribute("for")).toEqual("name")
 
