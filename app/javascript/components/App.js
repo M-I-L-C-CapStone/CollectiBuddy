@@ -24,6 +24,18 @@ import mockCollections from "./mockCollections"
       .then((payload)=> setCollections(payload))
       .catch((error)=> console.log(error))
     }
+
+    const deleteCollections = (id) => {
+      fetch(`http://localhost:3000/collections/${id}`, {
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "DELETE"
+      })
+        .then((response) => response.json())
+        .then((payload) => readCollections())
+        .catch((errors) => console.log("delete errors:", errors))
+    }
   
   return (
     <>
@@ -33,7 +45,7 @@ import mockCollections from "./mockCollections"
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/collectionindex" element={<ProtectedIndex collections={collections} current_user={props.current_user} />}/>
-          <Route path="/collectionshow/:id" element={<CollectionShow />}/>
+          <Route path="/collectionshow/:id" element={<CollectionShow collections={collections} deleteCollections={deleteCollections}  />}/>
           <Route path="/collectionnew" element={<CollectionNew />}/>
           <Route path="/collectionedit/:id" element={<CollectionEdit />}/>
           <Route path="/aboutus" element={<AboutUs />}/>
