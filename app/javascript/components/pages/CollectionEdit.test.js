@@ -24,19 +24,19 @@ describe("<CollectionEdit />", () => {
   })
   it("has fillable forms for updating a collection", () => {
     const formName = screen.getByText(/name/i)
-    expect(formAddress.getAttribute("for")).toEqual("name")
+    expect(formName.getAttribute("for")).toEqual("name")
 
     const formCategory = screen.getByText(/category/i)
-    expect(formPlanet.getAttribute("for")).toEqual("category")
+    expect(formCategory.getAttribute("for")).toEqual("category")
 
     const formDescription = screen.getByText(/description/i)
-    expect(formBedrooms.getAttribute("for")).toEqual("description")
+    expect(formDescription.getAttribute("for")).toEqual("description")
 
     const formCondition = screen.getByText(/condition/i)
-    expect(formBathrooms.getAttribute("for")).toEqual("condition")
+    expect(formCondition.getAttribute("for")).toEqual("condition")
 
     const formImage = screen.getByText(/image/i)
-    expect(formSquareFootage.getAttribute("for")).toEqual("image")
+    expect(formImage.getAttribute("for")).toEqual("image")
 
     const updateButton = screen.getByRole("button", /update/i)
     expect(updateButton).toBeInTheDocument()
