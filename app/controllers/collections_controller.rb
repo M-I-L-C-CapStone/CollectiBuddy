@@ -3,6 +3,10 @@ class CollectionsController < ApplicationController
         collections = Collection.all 
         render json: collections
     end 
+
+
+
+    
     def destroy
         collections = Collection.find(parms[:id])
         collections.destroy
