@@ -30,15 +30,15 @@ import mockCollections from "./mockCollections"
       <h1>CollectiBuddy App</h1>
       <BrowserRouter>
         <Header {...props}/>
-          <Routes>
-              <Route path="/" element={<Home />}/>
-              <Route path="/collectionindex" element={<ProtectedIndex collections={collections} current_user={props.current_user} />}/>
-              <Route path="/collectionshow/:id" element={<CollectionShow />}/>
-              <Route path="/collectionnew" element={<CollectionNew />}/>
-              <Route path="/collectionedit/:id" element={<CollectionEdit />}/>
-              <Route path="/aboutus" element={<AboutUs />}/>
-              <Route path="*" element={<NotFound />}/>
-          </Routes>
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/collectionindex" element={<ProtectedIndex collections={collections} current_user={props.current_user} />}/>
+          <Route path="/collectionshow/:id" element={<CollectionShow />}/>
+          <Route path="/collectionnew" element={<CollectionNew />}/>
+          <Route path="/collectionedit/:id" element={<CollectionEdit />}/>
+          <Route path="/aboutus" element={<AboutUs />}/>
+          <Route path="*" element={<NotFound />}/>
+        </Routes>
         <Footer />
       </BrowserRouter>
     </>
