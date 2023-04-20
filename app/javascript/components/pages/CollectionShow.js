@@ -4,7 +4,7 @@ import {Card, CardBody, Button, CardTitle, CardSubtitle} from "reactstrap"
 
 const CollectionShow = ({collections, deleteCollection}) => {
   let {id} = useParams()
-  navigate = useNavigate()
+  const navigate = useNavigate()
   const currentCollection = collections?.find((collection) => collection.id === +id)
 
   const handleSubmit = () => {

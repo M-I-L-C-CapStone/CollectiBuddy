@@ -4,11 +4,8 @@ class CollectionsController < ApplicationController
         render json: collections
     end 
 
-
-
-    
     def destroy
-        collections = Collection.find(parms[:id])
+        collections = Collection.find(params[:id])
         collections.destroy
         render json: collections
     end
