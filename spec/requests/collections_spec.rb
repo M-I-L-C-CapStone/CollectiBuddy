@@ -13,7 +13,7 @@ RSpec.describe "Collections", type: :request do
       expect(collection.length).to eq 1 
     end
   end
-
+#  test
   describe "DELETE /destroy" do 
     it 'deletes a collection' do 
       collection_params = {
