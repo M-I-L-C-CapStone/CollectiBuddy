@@ -42,7 +42,7 @@ const CollectionNew = ({ current_user, createCollection }) => {
                 name="category"
                 type="select"
                 onChange={handleChange}
-                value={createCollection.category}
+                value={myCollection.category}
               >
                 <option></option>
                 <option>Action Figure</option>
@@ -58,10 +58,11 @@ const CollectionNew = ({ current_user, createCollection }) => {
             </FormGroup>
             <FormGroup floating>
               <Input
+                id="description"
                 name="description"
                 type="textarea"
                 onChange={handleChange}
-                value={createCollection.description}
+                value={myCollection.description}
               />
               <Label for="description">Description</Label>
             </FormGroup>
@@ -71,7 +72,7 @@ const CollectionNew = ({ current_user, createCollection }) => {
                 name="condition"
                 type="select"
                 onChange={handleChange}
-                value={createCollection.condition}
+                value={myCollection.condition}
               >
                 <option></option>
                 <option>In Box</option>
@@ -83,10 +84,11 @@ const CollectionNew = ({ current_user, createCollection }) => {
             </FormGroup>
             <FormGroup floating>
               <Input
+                id="image"
                 name="image"
                 type="text"
                 onChange={handleChange}
-                value={createCollection.image}
+                value={myCollection.image}
               />
               <Label for="image">Image</Label>
             </FormGroup>
