@@ -13,3 +13,37 @@ nav.navbar a {
     color: white;
     padding-inline: 10px;
 }
+
+.aboutcard{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-evenly;
+    padding: 1%;
+    margin-bottom: 3%;
+}
+
+.aboutcard img{
+width: 350px;
+height: 300px;
+}
+
+.logolinkm img{
+    width: 25px;
+    height: 25px;
+}
+
+.logolinki img{
+    width: 25px;
+    height: 25px;
+}
+
+.logolinkl img{
+    width: 25px;
+    height: 25px;
+}
+
+.logolinkc img{
+    width: 25px;
+    height: 25px;
+}
