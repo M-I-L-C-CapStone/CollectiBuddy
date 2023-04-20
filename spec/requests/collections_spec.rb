@@ -14,9 +14,31 @@ RSpec.describe "Collections", type: :request do
     end
   end
 
+  describe "DELETE /destroy" do 
+    it 'deletes a collection' do 
+      collection_params = {
+        collection: {
+          name: "Captain Rex",
+          category: "Action Figure",
+          description: "Star Wars Clone Trooper",
+          condition: "Like New",
+          image: "https://live.staticflickr.com/8048/8349271749_bce9163bcc_b.jpg",
+          user_id: user.id
+        }
+      }
+      post '/collections', params: collection_params 
+      collection = Collection.first
+      collections = Collection.all
+
+      delete "/collections/#{collection.id}"
+      expect(response).to have_http_status(200)
+      expect(collections).to be_empty
+    end
+  end
+
   describe "PATCH /update" do
     it "updates a collection" do
-      collection_params = {
+       collection_params = {
         collection: {
           name: "Captain Rex",
           category: "Action Figure",
@@ -195,7 +217,6 @@ RSpec.describe "Collections", type: :request do
       expect(json['image']).to include "can't be blank"
     end
   end
-end
 
   describe "POST /create" do
     it "creates a collection" do
