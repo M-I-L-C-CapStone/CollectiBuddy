@@ -4,11 +4,7 @@ class CollectionsController < ApplicationController
         render json: collections
     end
 
-    def create
-        collection = Collection.create(collection_params)
-         if collection.valid?
-            render json: collection
-         else 
+<<<<<<<<< Temporary merge branch 1
     def update
         collection = Collection.find(params[:id])
         collection.update(collection_params)

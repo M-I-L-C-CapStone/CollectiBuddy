@@ -38,6 +38,23 @@ import mockCollections from "./mockCollections"
       .catch((errors) => console.log("Collection update errors:", errors))
   }
   
+<<<<<<<<< Temporary merge branch 1
+
+=========
+    const createCollection = (collection) => {
+      fetch("/collections", {
+        body: JSON.stringify(collection), 
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "POST"
+      })
+      .then((response) => response.json())
+      .then((payload) => readCollections())
+      .catch((errors) =>  console.log(errors))
+    }
+    
+>>>>>>>>> Temporary merge branch 2
   return (
     <>
       <BrowserRouter>
@@ -46,7 +63,7 @@ import mockCollections from "./mockCollections"
           <Route path="/" element={<Home />}/>
           <Route path="/collectionindex" element={<ProtectedIndex collections={collections} current_user={props.current_user} />}/>
           <Route path="/collectionshow/:id" element={<CollectionShow collections={collections}/>}/>
-          <Route path="/collectionnew" element={<CollectionNew />}/>
+          <Route path="/collectionnew" element={<CollectionNew current_user={props.current_user} createCollection={createCollection}/>}/>
           <Route
             path="/collectionedit/:id"
             element={<CollectionEdit collections={collections} updateCollection={updateCollection}/>}
