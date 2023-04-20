@@ -1,4 +1,4 @@
-import React, {useEffect, useState}from 'react'
+import React, {useEffect, useState }from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
@@ -38,7 +38,19 @@ import mockCollections from "./mockCollections"
       .catch((errors) => console.log("Collection update errors:", errors))
   }
   
-
+    const createCollection = (collection) => {
+      fetch("/collections", {
+        body: JSON.stringify(collection), 
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "POST"
+      })
+      .then((response) => response.json())
+      .then((payload) => readCollections())
+      .catch((errors) =>  console.log(errors))
+    }
+    
   return (
     <>
       <BrowserRouter>
@@ -47,7 +59,7 @@ import mockCollections from "./mockCollections"
           <Route path="/" element={<Home />}/>
           <Route path="/collectionindex" element={<ProtectedIndex collections={collections} current_user={props.current_user} />}/>
           <Route path="/collectionshow/:id" element={<CollectionShow collections={collections}/>}/>
-          <Route path="/collectionnew" element={<CollectionNew />}/>
+          <Route path="/collectionnew" element={<CollectionNew current_user={props.current_user} createCollection={createCollection}/>}/>
           <Route
             path="/collectionedit/:id"
             element={<CollectionEdit collections={collections} updateCollection={updateCollection}/>}
