@@ -26,34 +26,34 @@ describe("<CollectionNew />", () => {
         const nameBox = screen.getByRole("textbox", {
           name: /name/i,
         })
-        expect(nameBox).toBeInTheDocument();
+        expect(nameBox).toBeInTheDocument()
       })
 
       it("has a textbox for category", () => {
         const categoryBox = screen.getByRole("combobox", {
           name: /category/i,
         })
-        expect(categoryBox).toBeInTheDocument();
+        expect(categoryBox).toBeInTheDocument()
       })
 
       it("has a textbox for description", () => {
         const descriptionBox = screen.getByRole("textbox", {
           name: /description/i,
         })
-        expect(descriptionBox).toBeInTheDocument();
+        expect(descriptionBox).toBeInTheDocument()
       })
 
       it("has a textbox for image", () => {
         const imageBox = screen.getByRole("textbox", {
           name: /image/i,
         })
-        expect(imageBox).toBeInTheDocument();
+        expect(imageBox).toBeInTheDocument()
       })
 
       it("has a submit button", () => {
         const submit = screen.getByRole("button", {
           name: /Add Item/i,
         })
-        expect(submit).toBeInTheDocument();
+        expect(submit).toBeInTheDocument()
       })
 })
