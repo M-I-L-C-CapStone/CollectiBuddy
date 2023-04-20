@@ -38,9 +38,6 @@ import mockCollections from "./mockCollections"
       .catch((errors) => console.log("Collection update errors:", errors))
   }
   
-<<<<<<<<< Temporary merge branch 1
-
-=========
     const createCollection = (collection) => {
       fetch("/collections", {
         body: JSON.stringify(collection), 
@@ -54,7 +51,6 @@ import mockCollections from "./mockCollections"
       .catch((errors) =>  console.log(errors))
     }
     
->>>>>>>>> Temporary merge branch 2
   return (
     <>
       <BrowserRouter>

@@ -13,7 +13,7 @@ RSpec.describe "Collections", type: :request do
       expect(collection.length).to eq 1 
     end
   end
-<<<<<<<<< Temporary merge branch 1
+
   describe "PATCH /update" do
     it "updates a collection" do
       collection_params = {
@@ -48,6 +48,7 @@ RSpec.describe "Collections", type: :request do
       expect(updated_collection.image).to eq "https://live.staticflickr.com/8048/8349271749_bce9163bcc_b.jpg"
       expect(updated_collection.user_id).to eq user.id
     end
+
     it "doesn't update a collection without a name" do
       collection_params = {
         collection: {
@@ -195,7 +196,6 @@ RSpec.describe "Collections", type: :request do
     end
   end
 end
-=========
 
   describe "POST /create" do
     it "creates a collection" do
@@ -279,4 +279,3 @@ end
     end
   end
 end
->>>>>>>>> Temporary merge branch 2

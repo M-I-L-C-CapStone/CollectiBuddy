@@ -4,7 +4,6 @@ class CollectionsController < ApplicationController
         render json: collections
     end
 
-<<<<<<<<< Temporary merge branch 1
     def update
         collection = Collection.find(params[:id])
         collection.update(collection_params)
