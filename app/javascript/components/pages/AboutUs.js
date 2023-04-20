@@ -137,7 +137,7 @@ const AboutUs = () => {
         <CardText>
         Hey! I'm CJ, the Product Manager for CollectiBuddy. I am a 12 year veteran of the Kentucky Army National Guard turned Full Stack Web Developer. I have a passion for problem solving and creative thinking. This project was an awesome opportunity to work with a fantastic group to develop a fun app.
         </CardText>
-        <div className='logolinkl'>
+        <div className='logolinkc'>
         <CardSubtitle>
         <a href="https://www.linkedin.com/in/cj-norris/" target="_blank" rel="noreferrer">
         <img src={linkedin} alt="Linkedin logo"></img>
