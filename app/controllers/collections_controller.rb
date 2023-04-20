@@ -9,6 +9,12 @@ class CollectionsController < ApplicationController
          if collection.valid?
             render json: collection
          else 
+    def update
+        collection = Collection.find(params[:id])
+        collection.update(collection_params)
+        if collection.valid?
+            render json: collection
+        else
             render json: collection.errors, status: 422
         end
     end

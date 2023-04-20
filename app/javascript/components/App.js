@@ -15,7 +15,7 @@ import mockCollections from "./mockCollections"
     const [collections, setCollections] = useState([])
   
     useEffect(()=>{
-        readCollections()
+      readCollections()
     },[])
   
     const readCollections = () => {
@@ -24,31 +24,33 @@ import mockCollections from "./mockCollections"
       .then((payload)=> setCollections(payload))
       .catch((error)=> console.log(error))
     }
-  
-    const createCollection = (collection) => {
-      fetch("/collections", {
-        body: JSON.stringify(collection), 
-        headers: {
-          "Content-Type": "application/json"
-        },
-        method: "POST"
-      })
+    
+    const updateCollection = (collection, id) => {
+      fetch(`/collections/${id}`, {
+      body: JSON.stringify(collection),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "PATCH",
+    })
       .then((response) => response.json())
       .then((payload) => readCollections())
-      .catch((errors) =>  console.log(errors))
-    }
-    
+      .catch((errors) => console.log("Collection update errors:", errors))
+  }
+  
   return (
     <>
-      <h1>CollectiBuddy App</h1>
       <BrowserRouter>
         <Header {...props}/>
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/collectionindex" element={<ProtectedIndex collections={collections} current_user={props.current_user} />}/>
-          <Route path="/collectionshow/:id" element={<CollectionShow />}/>
-          <Route path="/collectionnew" element={<CollectionNew current_user={props.current_user} createCollection={createCollection}/>}/>
-          <Route path="/collectionedit/:id" element={<CollectionEdit />}/>
+          <Route path="/collectionshow/:id" element={<CollectionShow collections={collections}/>}/>
+          <Route path="/collectionnew" element={<CollectionNew />}/>
+          <Route
+            path="/collectionedit/:id"
+            element={<CollectionEdit collections={collections} updateCollection={updateCollection}/>}
+            />
           <Route path="/aboutus" element={<AboutUs />}/>
           <Route path="*" element={<NotFound />}/>
         </Routes>

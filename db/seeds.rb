@@ -6,21 +6,21 @@ user1_collections = [{
     category: 'Action Figure', 
     description: 'Clone Trooper from Star Wars', 
     condition: 'Like New', 
-    image: 'https://static.wikia.nocookie.net/heathcliff/images/b/b8/Heathcliff_promotional.png/revision/latest?cb=20210522181311g'
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6qbp5A4VfJs60-E4F7dF59dSdooUl_dMcmQ&usqp=CAU'
     },      
     {
         name: 'Cpt. Rex',
         category: 'Action Figure', 
         description: 'Clone Trooper from Star Wars', 
         condition: 'Like New', 
-        image: 'https://static.wikia.nocookie.net/heathcliff/images/b/b8/Heathcliff_promotional.png/revision/latest?cb=20210522181311g'
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6qbp5A4VfJs60-E4F7dF59dSdooUl_dMcmQ&usqp=CAU'
     },
     {
         name: 'Cpt. Rex',
         category: 'Action Figure', 
         description: 'Clone Trooper from Star Wars', 
         condition: 'Like New', 
-        image: 'https://static.wikia.nocookie.net/heathcliff/images/b/b8/Heathcliff_promotional.png/revision/latest?cb=20210522181311g'
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6qbp5A4VfJs60-E4F7dF59dSdooUl_dMcmQ&usqp=CAU'
     }
 ]
 
