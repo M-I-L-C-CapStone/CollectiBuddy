@@ -4,11 +4,22 @@ class CollectionsController < ApplicationController
         render json: collections
     end
 
+
     def create
         collection = Collection.create(collection_params)
          if collection.valid?
             render json: collection
          else 
+          render json: collection.errors, status: 422
+         end
+    end
+
+    def update
+        collection = Collection.find(params[:id])
+        collection.update(collection_params)
+        if collection.valid?
+            render json: collection
+        else
             render json: collection.errors, status: 422
         end
     end

@@ -26,8 +26,6 @@ const ProtectedIndex = ({collections, current_user }) => {
                 </CardTitle>
                 <CardSubtitle>
                   {collection.category}, 
-                  {collection.description}, 
-                  {collection.condition}
                 </CardSubtitle>
                 <Button>
                   <NavLink to={`/collectionshow/${collection.id}`} >
