@@ -1,7 +1,16 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
+body {
+    height: 100vh;
+    margin:0 auto;
+    text-align: center;
+}
 
 header {
     margin-bottom: 50px;
+    z-index: 100;
 }
 
 nav.navbar {
@@ -12,4 +21,61 @@ nav.navbar a {
     text-decoration: none;
     color: white;
     padding-inline: 10px;
+}
+
+nav.navbar .navbar-brand {
+    font-family: "Permanent Marker";
+}
+.home-page {
+    padding-top: 2%;
+    height: 100vh;
+}
+// div .carousel-slide {
+//     height: 25%;
+// }
+.carousel-item > img { 
+    width: 100vw;
+    height: 50vh;
+  }
+.carousel-inner {
+    height: 50vh;
+}
+// .carousel-item, .carousel-item.active {
+//     align-items:center;
+// }
+
+.collections {
+    padding-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.show-page {
+    padding-top: 2%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.show-page.div.card {
+    width: 600px;
+}
+.create-form {
+    padding-top: 5%;
+}
+form {
+    margin-inline: 25%;
+}
+footer nav.navbar {
+    margin-top: 50px;
+}
+h1 {
+    padding-top: 2%;
+    font-family: "Permanent Marker";
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
