@@ -1,10 +1,16 @@
 import React from 'react'
-import { NavLink, useParams } from 'react-router-dom'
+import { NavLink, useParams, useNavigate } from 'react-router-dom'
 import {Card, CardBody, Button, CardTitle, CardSubtitle} from "reactstrap"
 
-const CollectionShow = ({collections}) => {
+const CollectionShow = ({collections, deleteCollection}) => {
   let {id} = useParams()
+  navigate = useNavigate()
   const currentCollection = collections?.find((collection) => collection.id === +id)
+
+  const handleSubmit = () => {
+    deleteCollection(currentCollection.id)
+    navigate("/collectionindex")
+  }
 
   return (
     <>
@@ -36,10 +42,8 @@ const CollectionShow = ({collections}) => {
               Edit
             </NavLink>
           </Button>
-          <Button>
-            <NavLink to={"/collectiondelete"}>
+          <Button onClick={handleSubmit}>         
               Delete
-            </NavLink>
           </Button>
         </Card>
       }
