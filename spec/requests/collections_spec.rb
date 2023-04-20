@@ -13,4 +13,27 @@ RSpec.describe "Collections", type: :request do
       expect(collection.length).to eq 1 
     end
   end
+
+  describe "DELETE /destroy" do 
+    it 'deletes a collection' do 
+      collection_params = {
+        collection: {
+          name: "Captain Rex",
+          category: "Action Figure",
+          description: "Star Wars Clone Trooper",
+          condition: "Like New",
+          image: "https://live.staticflickr.com/8048/8349271749_bce9163bcc_b.jpg",
+          user_id: user.id
+        }
+      }
+      post '/collections', params: collection_params 
+      collection = Collection.first
+      collections = Collection.all
+
+      delete "/collections/#{collection.id}"
+      expect(response).to have_http_status(200)
+      expect(collections).to be_empty
+    end
+  end
+
 end
