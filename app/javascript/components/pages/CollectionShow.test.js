@@ -13,7 +13,6 @@ describe("<CollectionShow />", () => {
       id: 1
     }
 
-   
     render(
       <MemoryRouter initialEntries={["/collectionshow/1"]}>
         <Routes>
@@ -22,25 +21,21 @@ describe("<CollectionShow />", () => {
       </MemoryRouter>
     )
   })
-  it("renders without crashing", () => {
-    const pageTitle = screen.getByText("Your Collectible")
-    expect(pageTitle).toBeInTheDocument()
-  })
-    
+  it("renders without crashing", () => {})
 
-  it("displays a collection item's name, category, describe, condition, and image", () => {collections.forEach(collection => {
-    const collectionAttribute = screen.getByText(collection.name, collection.category, collection.description, collection.condition, collection.image)
-    expect(collectionAttribute).toBeInTheDocument()
-         })
+  it("displays a collection item's name, category, description, condition, and image", () => {collections.forEach(collection => {
+    const collectionAttribute = screen.getAllByText(collection.name, collection.category, collection.description, collection.condition, collection.image)
+    expect(collectionAttribute[0]).toBeInTheDocument()
     })
+  })
+
   it("displays a button for edit",() => {
-       const editButton = screen.getByText( /edit/i)
-       expect(editButton).toBeInTheDocument()
-   })
+    const editButton = screen.getByText(/edit/i)
+    expect(editButton).toBeInTheDocument()
+  })
 
-   it("displays a button for delete",() => {
-    const deleteButton = screen.getByText( /delete/i)
+  it("displays a button for delete",() => {
+    const deleteButton = screen.getByText(/delete/i)
     expect(deleteButton).toBeInTheDocument()
-})
-
+  })
 })

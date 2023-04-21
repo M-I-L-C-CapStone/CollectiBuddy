@@ -32,9 +32,8 @@ describe("<NotFound />", () => {
     })
 
     it("renders a button", () => {
-        const back = screen.getByRole('button', {
-          name: /back to your ollection/i,
-        })
+        notFoundRender()
+        const back = screen.getByText(/back to your collection/i)
         expect(back).toBeInTheDocument()
       })
 })
