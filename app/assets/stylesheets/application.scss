@@ -6,11 +6,11 @@ body {
     height: 100vh;
     margin:0 auto;
     text-align: center;
+    background-color: #CED3DC;
 }
 
 header {
     margin-bottom: 50px;
-    z-index: 100;
 }
 
 nav.navbar {
@@ -30,42 +30,78 @@ nav.navbar .navbar-brand {
     padding-top: 2%;
     height: 100vh;
 }
-// div .carousel-slide {
-//     height: 25%;
-// }
+.home-page-text {
+  border: 2px solid black;
+  background-color: white;
+  margin-inline: 10%;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px black;
+}
+
 .carousel-item > img { 
-    width: 100vw;
-    height: 50vh;
+    max-width: 1000px;
+    max-height: 1000px;
   }
 .carousel-inner {
     height: 50vh;
 }
-// .carousel-item, .carousel-item.active {
-//     align-items:center;
-// }
 
+.index-page {
+    height: 100%;
+}
 .collections {
     padding-top: 5%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+div .card {
+    box-sizing: border-box;
+    border: 3px solid black;
+    box-shadow: 5px 10px black;
+    max-block-size: 40rem;
+    margin: 10px;
+}
+
+.card-img {
+    padding: 10px;
+    max-height: 300px;
+    max-width: 300px;
+    margin: auto;
 }
 
 .show-page {
-    padding-top: 2%;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
+
 }
-.show-page.div.card {
-    width: 600px;
-}
+
 .create-form {
     padding-top: 5%;
+    
+}
+.new-page {
+    height: 100vh;
+}
+.edit-page {
+    height: 100vh;
 }
 form {
     margin-inline: 25%;
+}
+input {
+  box-shadow: 5px 5px black;
+}
+textarea {
+  box-shadow: 5px 5px black;
+}
+select {
+  box-shadow: 5px 5px black;
 }
 footer nav.navbar {
     margin-top: 50px;
@@ -79,3 +115,31 @@ a {
     text-decoration: none;
     color: white;
 }
+
+.btn {
+    background-color: #A31621;
+    box-shadow: 2px 2px black;
+}
+
+.btn:hover {
+    background-color: #A31621;
+    
+}
+
+.btn a:hover {
+    color: white;
+}
+.not-found-page {
+    height: 100vh;
+    
+ }
+.card-footer {
+  display:flex;
+  justify-content: space-evenly;
+}
+.not-found-content {
+    display:flex;
+    flex-direction: column;
+    align-items:center ;
+}
+

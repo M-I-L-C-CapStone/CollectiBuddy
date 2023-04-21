@@ -4,7 +4,7 @@ import {
   CardBody,
   Button,
   CardTitle,
-  CardSubtitle,
+  CardImg,
   ListGroup,
   ListGroupItem,
 } from "reactstrap"
@@ -16,33 +16,35 @@ const ProtectedIndex = ({ collections, current_user }) => {
   )
   return (
     <>
-      <h1 className="index-header">Your Collection</h1>
-      <div className="collections">
-        {myCollections?.map((collection, index) => {
-          return (
-            <Card
-              key={index}
-              style={{
-                width: "18rem",
-              }}
-            >
-              <img alt={collection.name} src={collection.image} />
-              <CardBody>
-                <CardTitle tag="h5">{collection.name}</CardTitle>
-              </CardBody>
-              <ListGroup flush>
-                <ListGroupItem>{collection.category}</ListGroupItem>
-              </ListGroup>
-              <CardBody>
-                <Button>
-                  <NavLink to={`/collectionshow/${collection.id}`}>
-                    See More Info
-                  </NavLink>
-                </Button>
-              </CardBody>
-            </Card>
-          )
-        })}
+      <div className="index-page">
+        <h1 className="index-header">Your Collection</h1>
+        <div className="collections">
+          {myCollections?.map((collection, index) => {
+            return (
+              <Card
+                key={index}
+                style={{
+                  width: "18rem",
+                }}
+              >
+                <CardImg alt={collection.name} src={collection.image} />
+                <CardBody>
+                  <CardTitle tag="h5">{collection.name}</CardTitle>
+                </CardBody>
+                <ListGroup flush>
+                  <ListGroupItem>{collection.category}</ListGroupItem>
+                </ListGroup>
+                <CardBody>
+                  <Button>
+                    <NavLink to={`/collectionshow/${collection.id}`}>
+                      See More Info
+                    </NavLink>
+                  </Button>
+                </CardBody>
+              </Card>
+            )
+          })}
+        </div>
       </div>
     </>
   )
