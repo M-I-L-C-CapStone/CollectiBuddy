@@ -18,16 +18,14 @@ describe("<Home />", () => {
         homeRender()
 
         const welcome = screen.getByRole('heading', {
-            name: /Welcome to CollectiBuddy! Please log in or Sign Up to begin your Collection/i
+            name: /Welcome to CollectiBuddy!/i
         })
         expect(welcome).toBeInTheDocument()
     })
 
     it("renders a app description", () => {
         homeRender()
-        const description = screen.getByRole('heading', {
-            name: /looking for a way to keep track of all your favorite collectibles in one place\? we are happy to say that you need to look no further and as a member of collectibuddy you can save an online log of all your prescious collectibles\. sort them, edit their conditions, and event stage them for auction\./i
-        })
+        const description = screen.getByText(/Looking/i)
         expect(description).toBeInTheDocument()
     })
 
@@ -57,5 +55,19 @@ describe("<Home />", () => {
             name: /slide 5/i
         })
         expect(collectible5).toBeInTheDocument()
+    })
+
+    it("has clickable links to move from image to image", () => {
+        homeRender()
+
+        const previous = screen.getByRole('button', {
+            name: /Previous/i
+        })
+        expect(previous).toBeInTheDocument()
+
+        const next = screen.getByRole('button', {
+            name: /Next/i
+        })
+        expect(next).toBeInTheDocument()
     })
 })

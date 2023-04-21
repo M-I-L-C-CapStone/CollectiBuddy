@@ -24,19 +24,6 @@ import NotFound from "./pages/NotFound"
       .catch((error)=> console.log(error))
     }
     
-    const updateCollection = (collection, id) => {
-      fetch(`/collections/${id}`, {
-      body: JSON.stringify(collection),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "PATCH",
-    })
-      .then((response) => response.json())
-      .then((payload) => readCollections())
-      .catch((errors) => console.log("Collection update errors:", errors))
-  }
-  
     const createCollection = (collection) => {
       fetch("/collections", {
         body: JSON.stringify(collection), 
@@ -49,6 +36,31 @@ import NotFound from "./pages/NotFound"
       .then((payload) => readCollections())
       .catch((errors) =>  console.log(errors))
     }
+
+    const updateCollection = (collection, id) => {
+      fetch(`/collections/${id}`, {
+      body: JSON.stringify(collection),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "PATCH",
+    })
+      .then((response) => response.json())
+      .then((payload) => readCollections())
+      .catch((errors) => console.log("Collection update errors:", errors))
+  }
+
+    const deleteCollection = (id) => {
+      fetch(`http://localhost:3000/collections/${id}`, {
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "DELETE"
+      })
+        .then((response) => response.json())
+        .then((payload) => readCollections())
+        .catch((errors) => console.log("delete errors:", errors))
+    }
     
   return (
     <>
@@ -57,7 +69,7 @@ import NotFound from "./pages/NotFound"
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/collectionindex" element={<ProtectedIndex collections={collections} current_user={props.current_user} />}/>
-          <Route path="/collectionshow/:id" element={<CollectionShow collections={collections}/>}/>
+          <Route path="/collectionshow/:id" element={<CollectionShow collections={collections} deleteCollection={deleteCollection}  />}/>
           <Route path="/collectionnew" element={<CollectionNew current_user={props.current_user} createCollection={createCollection}/>}/>
           <Route
             path="/collectionedit/:id"

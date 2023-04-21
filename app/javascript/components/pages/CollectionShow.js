@@ -1,48 +1,62 @@
-import React from 'react'
-import { NavLink, useParams } from 'react-router-dom'
-import {Card, CardBody, Button, CardTitle, CardSubtitle} from "reactstrap"
+import React from "react"
+import { NavLink, useParams, useNavigate } from "react-router-dom"
+import {
+  Card,
+  CardBody,
+  Button,
+  CardTitle,
+  CardSubtitle,
+  CardText,
+  ListGroup,
+  ListGroupItem,
+} from "reactstrap"
 
-const CollectionShow = ({collections}) => {
+const CollectionShow = ({collections, deleteCollection}) => {
   let {id} = useParams()
+  const navigate = useNavigate()
   const currentCollection = collections?.find((collection) => collection.id === +id)
+
+  const handleSubmit = () => {
+    deleteCollection(currentCollection.id)
+    navigate("/collectionindex")
+  }
 
   return (
     <>
-      <h1>Your Collectible</h1>
-      {currentCollection &&
-        <Card
-          style={{
-            width: '18rem'
-          }}
-        >
-          <img
-            alt={currentCollection.name}
-            src={currentCollection.image}
-          />
-          <CardBody>
-            <CardTitle tag="h5">
-              {currentCollection.name}
-            </CardTitle>
-            <CardSubtitle>
-              Category: {currentCollection.category}, Description:
-            {currentCollection.description}
-            </CardSubtitle>
-            <CardSubtitle>
-              Condition: {currentCollection.condition}
-            </CardSubtitle>
-          </CardBody>
-          <Button>
-            <NavLink to={`/collectionedit/${currentCollection.id}`}>
-              Edit
-            </NavLink>
-          </Button>
-          <Button>
-            <NavLink to={"/collectiondelete"}>
-              Delete
-            </NavLink>
-          </Button>
-        </Card>
-      }
+      {currentCollection && (
+        <>
+          <h1 className="show-header">{currentCollection.name}</h1>
+          <div className="show-page">
+            <Card
+              style={{
+                width: "30vw",
+              }}
+            >
+              <img alt={currentCollection.name} src={currentCollection.image} />
+              <CardBody>
+                <CardTitle tag="h5">{currentCollection.name}</CardTitle>
+                <CardText>{currentCollection.description}</CardText>
+              </CardBody>
+              <ListGroup flush>
+                <ListGroupItem>{currentCollection.category}</ListGroupItem>
+                <ListGroupItem>
+                  Condition: {currentCollection.condition}
+                </ListGroupItem>
+              </ListGroup>
+              <CardBody>
+                <Button>
+                  <NavLink to={`/collectionedit/${currentCollection.id}`}>
+                    Edit
+                  </NavLink>
+                </Button>
+                <Button onClick={handleSubmit}>         
+                  Delete
+                </Button>
+              </CardBody>
+            </Card>
+          </div>
+        </>
+      )}
     </>
   )
 }

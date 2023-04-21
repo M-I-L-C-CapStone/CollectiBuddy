@@ -37,5 +37,6 @@
 yarn-debug.log*
 .yarn-integrity
 
+# Ignores test coverage files
 
 /coverage
