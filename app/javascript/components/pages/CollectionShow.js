@@ -16,7 +16,6 @@ const CollectionShow = ({collections, deleteCollection}) => {
   const navigate = useNavigate()
   const currentCollection = collections?.find((collection) => collection.id === +id)
 
-
   const handleSubmit = () => {
     deleteCollection(currentCollection.id)
     navigate("/collectionindex")
@@ -30,7 +29,7 @@ const CollectionShow = ({collections, deleteCollection}) => {
           <div className="show-page">
             <Card
               style={{
-                width: "50vw",
+                width: "30vw",
               }}
             >
               <img alt={currentCollection.name} src={currentCollection.image} />
