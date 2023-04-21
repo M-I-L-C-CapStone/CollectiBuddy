@@ -1,7 +1,7 @@
 import React from 'react'
 import {Card, CardBody, CardTitle, CardSubtitle, CardText} from "reactstrap"
 import iraImage from "../assets/IMG_7346.jpg"
-import leoImage from "../assets/LeoCuero1.JPG"
+import leoImage from "../assets/LeoCuero1.jpg"
 import mikeImage from "../assets/image.png"
 import cjImage from "../assets/pfp.png"
 import linkedin from "../assets/linkedin.png"
@@ -11,14 +11,14 @@ const AboutUs = () => {
   return (
     <>
       <h1>Meet the CollectiBuddy Team</h1>
-      <div className='aboutcard'>
+      <div className='card'>
       <Card
       style={{
         width: '22rem'
       }}
       >
       <img
-        alt="Bio Pic"
+        alt="Mike's Bio Pic"
         src={mikeImage}
         />
       <CardBody>
@@ -37,7 +37,7 @@ const AboutUs = () => {
         <div className='logolinkm'>
         <CardSubtitle>
         <a href="https://www.linkedin.com/in/michael-rogers04/" target="_blank" rel="noreferrer">
-        <img src={linkedin} alt="Linkedin logo"></img>
+        <img src={linkedin} alt="Mike Linkedin logo"></img>
       </a>
       <a href="https://github.com/mikerogers04/" target="_blank" rel="noreferrer">
         <img src={github} alt="GitHub logo"></img>
@@ -52,7 +52,7 @@ const AboutUs = () => {
       }}
       >
       <img
-        alt="Bio Pic"
+        alt="Ira's Bio Pic"
         src={iraImage}
         />
       <CardBody>
@@ -87,7 +87,7 @@ const AboutUs = () => {
       }}
       >
       <img
-        alt="Bio Pic"
+        alt="Leo's Bio Pic"
         src={leoImage}
         />
       <CardBody>
@@ -121,7 +121,7 @@ const AboutUs = () => {
       }}
       >
       <img
-        alt="Bio Pic"
+        alt="CJ's Bio Pic"
         src={cjImage}
         />
       <CardBody>
