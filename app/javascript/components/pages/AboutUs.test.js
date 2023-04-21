@@ -121,4 +121,5 @@ describe("<AboutUs />", () => {
             )
         expect(bioInfoCj).toBeInTheDocument()
      })
+    
 })

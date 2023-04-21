@@ -11,7 +11,7 @@ const AboutUs = () => {
   return (
     <>
       <h1>Meet the CollectiBuddy Team</h1>
-      <div className='card'>
+      <div className='aboutcard'>
       <Card
       style={{
         width: '22rem'
