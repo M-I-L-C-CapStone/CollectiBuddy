@@ -76,6 +76,11 @@ const Home = () => {
   return (
     <>
       <h1>Welcome to CollectiBuddy!</h1>
+      <h4 className="home-page-text">
+        Looking for a way to keep track of all your favorite collectibles in one
+        place? Look no further! As a member of CollectiBuddy you can save an
+        online log of all of your precious collectibles.
+      </h4>
       <div className="home-page">
         <Carousel
           activeIndex={activeIndex}
@@ -100,13 +105,6 @@ const Home = () => {
             onClickHandler={next}
           />
         </Carousel>
-
-        <h3>
-          Looking for a way to keep track of all your favorite collectibles in
-          one place? Look no further! As a member of CollectiBuddy you can save
-          an online log of all of your prescious collectibles. Sort them, edit
-          their conditions, and event stage them for auction.
-        </h3>
       </div>
     </>
   )

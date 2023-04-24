@@ -35,73 +35,75 @@ const CollectionEdit = ({ collections, current_user, updateCollection }) => {
   if (editCollection) {
     return (
       <>
-        <h1 className="edit-header">Edit {collectionName}</h1>
-        <div className="create-form">
-          <Form>
-            <FormGroup floating>
-              <Input
-                id="name"
-                name="name"
-                type="text"
-                onChange={handleChange}
-                value={editCollection.name}
-              />
-              <Label for="name">Name</Label>
-            </FormGroup>
-            <FormGroup floating>
-              <Input
-                id="category"
-                name="category"
-                type="select"
-                onChange={handleChange}
-                value={editCollection.category}
-              >
-                <option>Action Figure</option>
-                <option>Trading Card</option>
-                <option>Lego</option>
-                <option>Model Kit</option>
-                <option>Coin</option>
-                <option>Sports Memorabilia</option>
-                <option>Toy</option>
-                <option>Other</option>
-              </Input>
-              <Label for="category">Category</Label>
-            </FormGroup>
-            <FormGroup floating>
-              <Input
-                name="description"
-                type="textarea"
-                onChange={handleChange}
-                value={editCollection.description}
-              />
-              <Label for="description">Description</Label>
-            </FormGroup>
-            <FormGroup floating>
-              <Input
-                name="condition"
-                type="select"
-                onChange={handleChange}
-                value={editCollection.condition}
-              >
-                <option>In Box</option>
-                <option>Like New</option>
-                <option>Used</option>
-                <option>Damage</option>
-              </Input>
-              <Label for="condition">Condition</Label>
-            </FormGroup>
-            <FormGroup floating>
-              <Input
-                name="image"
-                type="text"
-                onChange={handleChange}
-                value={editCollection.image}
-              />
-              <Label for="image">Image</Label>
-            </FormGroup>
+        <div className="edit-page">
+          <h1 className="edit-header">Edit {collectionName}</h1>
+          <div className="create-form">
+            <Form>
+              <FormGroup floating>
+                <Input
+                  id="name"
+                  name="name"
+                  type="text"
+                  onChange={handleChange}
+                  value={editCollection.name}
+                />
+                <Label for="name">Name</Label>
+              </FormGroup>
+              <FormGroup floating>
+                <Input
+                  id="category"
+                  name="category"
+                  type="select"
+                  onChange={handleChange}
+                  value={editCollection.category}
+                >
+                  <option>Action Figure</option>
+                  <option>Trading Card</option>
+                  <option>Lego</option>
+                  <option>Model Kit</option>
+                  <option>Coin</option>
+                  <option>Sports Memorabilia</option>
+                  <option>Toy</option>
+                  <option>Other</option>
+                </Input>
+                <Label for="category">Category</Label>
+              </FormGroup>
+              <FormGroup floating>
+                <Input
+                  name="description"
+                  type="textarea"
+                  onChange={handleChange}
+                  value={editCollection.description}
+                />
+                <Label for="description">Description</Label>
+              </FormGroup>
+              <FormGroup floating>
+                <Input
+                  name="condition"
+                  type="select"
+                  onChange={handleChange}
+                  value={editCollection.condition}
+                >
+                  <option>In Box</option>
+                  <option>Like New</option>
+                  <option>Used</option>
+                  <option>Damage</option>
+                </Input>
+                <Label for="condition">Condition</Label>
+              </FormGroup>
+              <FormGroup floating>
+                <Input
+                  name="image"
+                  type="text"
+                  onChange={handleChange}
+                  value={editCollection.image}
+                />
+                <Label for="image">Image</Label>
+              </FormGroup>
 
-            <Button onClick={handleSubmit}>Update {collectionName}</Button>
-          </Form>
+              <Button onClick={handleSubmit}>Update {collectionName}</Button>
+            </Form>
+          </div>
         </div>
       </>
     )

@@ -5,16 +5,19 @@ import {
   CardBody,
   Button,
   CardTitle,
-  CardSubtitle,
+  CardFooter,
+  CardImg,
   CardText,
   ListGroup,
   ListGroupItem,
 } from "reactstrap"
 
-const CollectionShow = ({collections, deleteCollection}) => {
-  let {id} = useParams()
+const CollectionShow = ({ collections, deleteCollection }) => {
+  let { id } = useParams()
   const navigate = useNavigate()
-  const currentCollection = collections?.find((collection) => collection.id === +id)
+  const currentCollection = collections?.find(
+    (collection) => collection.id === +id
+  )
 
   const handleSubmit = () => {
     deleteCollection(currentCollection.id)
@@ -32,7 +35,10 @@ const CollectionShow = ({collections, deleteCollection}) => {
                 width: "30vw",
               }}
             >
-              <img alt={currentCollection.name} src={currentCollection.image} />
+              <CardImg
+                alt={currentCollection.name}
+                src={currentCollection.image}
+              />
               <CardBody>
                 <CardTitle tag="h5">{currentCollection.name}</CardTitle>
                 <CardText>{currentCollection.description}</CardText>
@@ -43,16 +49,14 @@ const CollectionShow = ({collections, deleteCollection}) => {
                   Condition: {currentCollection.condition}
                 </ListGroupItem>
               </ListGroup>
-              <CardBody>
+              <CardFooter>
                 <Button>
                   <NavLink to={`/collectionedit/${currentCollection.id}`}>
                     Edit
                   </NavLink>
                 </Button>
-                <Button onClick={handleSubmit}>         
-                  Delete
-                </Button>
-              </CardBody>
+                <Button onClick={handleSubmit}>Delete</Button>
+              </CardFooter>
             </Card>
           </div>
         </>
