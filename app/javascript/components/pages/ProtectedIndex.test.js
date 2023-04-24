@@ -35,5 +35,4 @@ describe("<ProtectedIndex />", () => {
     expect(collectionName).toBeInTheDocument()
     })
   })  
-
 })
