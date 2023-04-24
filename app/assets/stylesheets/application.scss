@@ -177,3 +177,8 @@ a {
     align-items:center ;
 }
 
+.toast{
+  z-index: 1000;
+  position: fixed;
+  margin-top: 5px;
+  }
