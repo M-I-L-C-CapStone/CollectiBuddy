@@ -25,11 +25,9 @@ describe("<ProtectedIndex />", () => {
     )
   })
   it("renders without crashing", () => {})
-  
-  it("renders collection cards", () => {})
 
   it("displays a header", () => {
-    const collections = screen.getByText("My Collection")
+    const collections = screen.getByText("Your Collection")
     expect(collections).toBeInTheDocument()
   })
   it("displays each collection item's name", () => {collections.forEach(collection => {
