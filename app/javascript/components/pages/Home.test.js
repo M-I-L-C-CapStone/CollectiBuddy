@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react'
 import Home from './Home'
 import { BrowserRouter } from 'react-router-dom'
 import "@testing-library/jest-dom"
+import fireEvent from '@testing-library/user-event'
 
 describe("<Home />", () => {
 
@@ -57,17 +58,27 @@ describe("<Home />", () => {
         expect(collectible5).toBeInTheDocument()
     })
 
-    it("has clickable links to move from image to image", () => {
+    it("has the next image render when a user clicks on next button", async () => {
         homeRender()
 
-        const previous = screen.getByRole('button', {
-            name: /Previous/i
-        })
-        expect(previous).toBeInTheDocument()
-
-        const next = screen.getByRole('button', {
-            name: /Next/i
-        })
+        const next = screen.getByRole('button', {name: /next/i})
+        await fireEvent.click(next)
         expect(next).toBeInTheDocument()
+    })
+
+    it("has the the previous image render when a user clicks on previous button", async () => {
+        homeRender()
+
+        const previous = screen.getByRole('button', {name: /previous/i})
+        await fireEvent.click(previous)
+        expect(previous).toBeInTheDocument()
+    })
+
+    it("renders the slide 1 button", async () => {
+        homeRender()
+
+        const slide1 = screen.getByRole('button', {name: /slide 1/i})
+        await fireEvent.click(slide1)
+        expect(slide1).toBeInTheDocument()
     })
 })
