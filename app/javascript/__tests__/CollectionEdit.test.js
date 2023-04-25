@@ -1,9 +1,9 @@
 import React from "react"
 import "@testing-library/jest-dom"
 import { render, screen } from "@testing-library/react"
-import CollectionEdit from "./CollectionEdit"
+import CollectionEdit from "../components/pages/CollectionEdit"
 import { MemoryRouter, Routes, Route } from "react-router-dom"
-import collections from "../mockCollections"
+import collections from "../components/mockCollections"
 
 describe("<CollectionEdit />", () => {
   beforeEach(() => {
