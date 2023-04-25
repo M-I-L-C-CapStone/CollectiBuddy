@@ -68,7 +68,7 @@ const App = (props) => {
   }
 
   const deleteCollection = (id) => {
-    fetch(`http://localhost:3000/collections/${id}`, {
+    fetch(`/collections/${id}`, {
       headers: {
         "Content-Type": "application/json",
       },
