@@ -200,3 +200,9 @@ a {
 .modal-form{
     margin-inline: 5%;
 }
+
+.toast{
+  z-index: 1000;
+  position: fixed;
+  margin-top: 5px;
+}
