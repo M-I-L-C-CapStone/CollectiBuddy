@@ -5,7 +5,7 @@ import { Nav, Navbar, NavbarBrand, NavbarText, NavItem } from "reactstrap"
 const Footer = () => {
   return (
     <footer>
-      <Navbar expand dark>
+      <Navbar expand dark fixed="bottom">
         <NavbarBrand href="/">Collecti🤖Buddy</NavbarBrand>
         <Nav className="me-auto" navbar>
           <NavLink to="/aboutus">About Us</NavLink>
