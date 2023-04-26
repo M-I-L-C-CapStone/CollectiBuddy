@@ -9,31 +9,31 @@ import {
 
 const items = [
   {
-    src: "https://images.unsplash.com/photo-1637063868743-71757b4770c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bGVnbyUyMGJ1aWxkJTIwbW9kZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+    src: "https://c4.wallpaperflare.com/wallpaper/802/274/556/action-figures-teenage-mutant-ninja-turtles-toys-wallpaper-preview.jpg",
     altText: "Slide 1",
     caption: "Slide 1",
     key: 1,
   },
   {
-    src: "https://images.unsplash.com/photo-1581557991964-125469da3b8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dG95fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    src: "https://images.stockx.com/images/Hasbro-Star-Wars-The-Black-Series-Clone-Troopers-Entertainment-Earth-4-Pack-Action-Figure.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&q=90&dpr=2&trim=color&updated_at=1629874272",
     altText: "Slide 2",
     caption: "Slide 2",
     key: 2,
   },
   {
-    src: "https://images.unsplash.com/photo-1606663889134-b1dedb5ed8b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YWN0aW9uJTIwZmlndXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    src: "https://live.staticflickr.com/2665/4161713573_ab5f20f5ee_b.jpg",
     altText: "Slide 3",
     caption: "Slide 3",
     key: 3,
   },
   {
-    src: "https://images.unsplash.com/photo-1611931960487-4932667079f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cG9rZW1vbiUyMGNhcmR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+    src: "https://w0.peakpx.com/wallpaper/500/934/HD-wallpaper-pokemon-cards-cool-pokemon-cards-random.jpg",
     altText: "Slide 4",
     caption: "Slide 4",
     key: 4,
   },
   {
-    src: "https://images.unsplash.com/photo-1593814681464-eef5af2b0628?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFnaWMlMjB0aGUlMjBnYXRoZXJpbmclMjBjYXJkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    src: "https://e0.pxfuel.com/wallpapers/542/459/desktop-wallpaper-magic-the-gathering-magic-cards.jpg",
     altText: "Slide 5",
     caption: "Slide 5",
     key: 5,
@@ -75,7 +75,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>Welcome to CollectiBuddy!</h1>
+      <h1 className="home-page-header">Welcome to CollectiBuddy!</h1>
       <h4 className="home-page-text">
         Looking for a way to keep track of all your favorite collectibles in one
         place? Look no further! As a member of CollectiBuddy you can save an

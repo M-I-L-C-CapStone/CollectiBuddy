@@ -16,6 +16,7 @@ const ToastHandler = ({ toastMessage }) => {
         toggle={function noRefCheck() {
           setToastDisplay(false)
         }}
+        className="toast-header"
       >
         {toastMessage.header}
       </ToastHeader>

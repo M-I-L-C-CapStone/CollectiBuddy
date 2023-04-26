@@ -1,16 +1,16 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Roboto:wght@500&display=swap');
 
+* {
+  font-family: "Kanit";
+}
 
 body {
     height: 100vh;
     margin:0 auto;
     text-align: center;
     background-color: #CED3DC;
-}
-
-header {
-    margin-bottom: 50px;
 }
 
 nav.navbar {
@@ -21,48 +21,47 @@ nav.navbar a {
     text-decoration: none;
     color: white;
     padding-inline: 10px;
+    font-family: "Kanit";
 }
 
 
-.aboutcard{
+div .about-us-cards {
     display: flex;
     flex-direction: row;
     align-items: stretch;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 1%;
     margin-bottom: 3%;
+    padding-bottom: 5rem;
 }
 
-.aboutcard img{
-    width: 350px;
-    height: 300px;
+.about-image {
+  border-radius: 15px;
+  object-fit: cover;
 }
 
-.logolinkm img{
-    width: 25px;
-    height: 25px;
+.about-image-leo {
+  border-radius: 15px;
+  object-position: 75% 18%;
+  object-fit: cover;
 }
 
-.logolinki img{
-    width: 25px;
-    height: 25px;
+.logo-link img{
+    width: 40px;
+    height: 40px;
 }
 
-.logolinkl img{
-    width: 25px;
-    height: 25px;
-}
-
-.logolinkc img{
-    width: 25px;
-    height: 25px;
-}
 nav.navbar .navbar-brand {
     font-family: "Permanent Marker";
 }
 .home-page {
     padding-top: 2%;
     height: 100vh;
+    z-index: 0;
+}
+.home-page-header {
+  padding-top: 4rem;
 }
 .home-page-text {
   border: 2px solid black;
@@ -71,32 +70,39 @@ nav.navbar .navbar-brand {
   border-radius: 10px;
   padding: 10px;
   box-shadow: 5px 5px black;
+
 }
 
 .carousel-item > img { 
-    max-width: 1000px;
-    max-height: 1000px;
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    
   }
 .carousel-inner {
+    width: 100%;
     height: 50vh;
+    object-fit: cover;
+    border: 2px solid black;
 }
 
 .index-page {
-    height: 100%;
+    height: 100vh;
 }
 .collections {
-    padding-top: 5%;
+    padding-top: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    padding-bottom: 5rem;
 }
 
 div .card {
     box-sizing: border-box;
     border: 3px solid black;
     box-shadow: 5px 10px black;
-    max-block-size: 40rem;
+    max-block-size: 50rem;
     margin: 10px;
 }
 
@@ -112,11 +118,10 @@ div .card {
     flex-direction: column;
     align-items: center;
     height: 100vh;
-
 }
 
 .create-form {
-    padding-top: 5%;
+    padding-top: 1rem;
     
 }
 .new-page {
@@ -137,11 +142,11 @@ textarea {
 select {
   box-shadow: 5px 5px black;
 }
-footer nav.navbar {
-    margin-top: 50px;
+nav .navbar .navbar-expand .navbar-dark .fixed-bottom {
+  padding-top: 4rem;
 }
 h1 {
-    padding-top: 2%;
+    padding-top: 4rem;
     font-family: "Permanent Marker";
 }
 
@@ -175,6 +180,34 @@ a {
     display:flex;
     flex-direction: column;
     align-items:center ;
+}
+
+.edit-modal{
+    background-color: #CED3DC;
+}
+
+.modal-body{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.modal-header{
+    background-color: #A31621;
+    color: white;
+    font-family: "Permanent Marker";
+}
+
+.modal-title {
+  font-family: "Permanent Marker";
+}
+
+.btn-close {
+    opacity: 1;
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.modal-form{
+    margin-inline: 5%;
 }
 
 .toast{
@@ -218,3 +251,16 @@ a {
     padding-top: 1%;
     z-index: 100;
 }
+
+  margin-top: 4rem;
+}
+
+.toast-header {
+  background-color:#A31621;
+  color: white;
+}
+
+strong {
+  font-family: "Permanent Marker"
+}
+

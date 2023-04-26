@@ -1,5 +1,13 @@
 import React from "react"
-import { Card, CardBody, CardTitle, CardSubtitle, CardText } from "reactstrap"
+import {
+  Card,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  CardText,
+  CardImg,
+  CardFooter,
+} from "reactstrap"
 import iraImage from "../assets/IMG_7346.jpg"
 import leoImage from "../assets/LeoCuero.jpg"
 import mikeImage from "../assets/image.png"
@@ -11,13 +19,17 @@ const AboutUs = () => {
   return (
     <>
       <h1>Meet the CollectiBuddy Team</h1>
-      <div className="aboutcard">
+      <div className="about-us-cards">
         <Card
           style={{
             width: "22rem",
           }}
         >
-          <img alt="Mike's Bio Pic" src={mikeImage} />
+          <CardImg
+            alt="mike's bio pic"
+            src={mikeImage}
+            className="about-image"
+          />
           <CardBody>
             <CardTitle tag="h5">Mike Rogers</CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h6">
@@ -31,32 +43,32 @@ const AboutUs = () => {
               the bounds of web development and help others grow into their true
               potential.
             </CardText>
-            <div className="logolinkm">
-              <CardSubtitle>
-                <a
-                  href="https://www.linkedin.com/in/michael-rogers04/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={linkedin} alt="Mike Linkedin logo"></img>
-                </a>
-                <a
-                  href="https://github.com/mikerogers04/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={github} alt="GitHub logo"></img>
-                </a>
-              </CardSubtitle>
-            </div>
           </CardBody>
+          <div className="logo-link">
+            <CardFooter>
+              <a
+                href="https://www.linkedin.com/in/michael-rogers04/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={linkedin} alt="Mike Linkedin logo"></img>
+              </a>
+              <a
+                href="https://github.com/mikerogers04/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={github} alt="GitHub logo"></img>
+              </a>
+            </CardFooter>
+          </div>
         </Card>
         <Card
           style={{
             width: "22rem",
           }}
         >
-          <img alt="Ira's Bio Pic" src={iraImage} />
+          <CardImg alt="ira's bio pic" src={iraImage} className="about-image" />
           <CardBody>
             <CardTitle tag="h5">Ira Holmes</CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h6">
@@ -68,32 +80,36 @@ const AboutUs = () => {
               life. I may not be able to draw but CSS helps give me all of the
               creative tools I need.
             </CardText>
-            <div className="logolinki">
-              <CardSubtitle>
-                <a
-                  href="https://www.linkedin.com/in/ira-holmes/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={linkedin} alt="Linkedin logo"></img>
-                </a>
-                <a
-                  href="https://github.com/iraholmes"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={github} alt="GitHub logo"></img>
-                </a>
-              </CardSubtitle>
-            </div>
           </CardBody>
+          <div className="logo-link">
+            <CardFooter>
+              <a
+                href="https://www.linkedin.com/in/ira-holmes/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={linkedin} alt="Linkedin logo"></img>
+              </a>
+              <a
+                href="https://github.com/iraholmes"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={github} alt="GitHub logo"></img>
+              </a>
+            </CardFooter>
+          </div>
         </Card>
         <Card
           style={{
             width: "22rem",
           }}
         >
-          <img alt="Leo's Bio Pic" src={leoImage} />
+          <CardImg
+            alt="leo's bio pic"
+            src={leoImage}
+            className="about-image-leo"
+          />
           <CardBody>
             <CardTitle tag="h5">Leopoldo F. Cuero</CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h6">
@@ -106,32 +122,32 @@ const AboutUs = () => {
               multiple roles, I consider myself an unwritten code with a code in
               mine : The more I LEARN the more I realize I need to LEARN more.
             </CardText>
-            <div className="logolinkl">
-              <CardSubtitle>
-                <a
-                  href="https://www.linkedin.com/in/leopoldo-cuero-0650a8202/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={linkedin} alt="Linkedin logo"></img>
-                </a>
-                <a
-                  href="https://github.com/Melaza6"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={github} alt="GitHub logo"></img>
-                </a>
-              </CardSubtitle>
-            </div>
           </CardBody>
+          <div className="logo-link">
+            <CardFooter>
+              <a
+                href="https://www.linkedin.com/in/leopoldo-cuero-0650a8202/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={linkedin} alt="Linkedin logo"></img>
+              </a>
+              <a
+                href="https://github.com/Melaza6"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={github} alt="GitHub logo"></img>
+              </a>
+            </CardFooter>
+          </div>
         </Card>
         <Card
           style={{
             width: "22rem",
           }}
         >
-          <img alt="CJ's Bio Pic" src={cjImage} />
+          <CardImg alt="CJ's bio pic" src={cjImage} className="about-image" />
           <CardBody>
             <CardTitle tag="h5">CJ Norris</CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h6">
@@ -144,25 +160,25 @@ const AboutUs = () => {
               thinking. This project was an awesome opportunity to work with a
               fantastic group to develop a fun app.
             </CardText>
-            <div className="logolinkc">
-              <CardSubtitle>
-                <a
-                  href="https://www.linkedin.com/in/cj-norris/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={linkedin} alt="Linkedin logo"></img>
-                </a>
-                <a
-                  href="https://github.com/cmnorrisii"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={github} alt="GitHub logo"></img>
-                </a>
-              </CardSubtitle>
-            </div>
           </CardBody>
+          <div className="logo-link">
+            <CardFooter>
+              <a
+                href="https://www.linkedin.com/in/cj-norris/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={linkedin} alt="Linkedin logo"></img>
+              </a>
+              <a
+                href="https://github.com/cmnorrisii"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={github} alt="GitHub logo"></img>
+              </a>
+            </CardFooter>
+          </div>
         </Card>
       </div>
     </>
