@@ -6,6 +6,7 @@ const Header = ({
   logged_in,
   current_user,
   new_user_route,
+  edit_user_registration,
   sign_in_route,
   sign_out_route,
 }) => {
