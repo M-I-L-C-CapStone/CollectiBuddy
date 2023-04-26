@@ -5,7 +5,6 @@ import Footer from "./components/Footer"
 import Home from "./pages/Home"
 import ProtectedIndex from "./pages/ProtectedIndex"
 import CollectionShow from "./pages/CollectionShow"
-import CollectionEdit from "./pages/CollectionEdit"
 import CollectionNew from "./pages/CollectionNew"
 import AboutUs from "./pages/AboutUs"
 import NotFound from "./pages/NotFound"
@@ -91,45 +90,12 @@ const App = (props) => {
         <Header {...props} />
         <ToastHandler toastMessage={toastMessage} />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/collectionindex"
-            element={
-              <ProtectedIndex
-                collections={collections}
-                current_user={props.current_user}
-              />
-            }
-          />
-          <Route
-            path="/collectionshow/:id"
-            element={
-              <CollectionShow
-                collections={collections}
-                deleteCollection={deleteCollection}
-              />
-            }
-          />
-          <Route
-            path="/collectionnew"
-            element={
-              <CollectionNew
-                current_user={props.current_user}
-                createCollection={createCollection}
-              />
-            }
-          />
-          <Route
-            path="/collectionedit/:id"
-            element={
-              <CollectionEdit
-                collections={collections}
-                updateCollection={updateCollection}
-              />
-            }
-          />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<Home />}/>
+          <Route path="/collectionindex" element={<ProtectedIndex collections={collections} current_user={props.current_user} />}/>
+          <Route path="/collectionshow/:id" element={<CollectionShow collections={collections} deleteCollection={deleteCollection} updateCollection={updateCollection}/>}/>
+          <Route path="/collectionnew" element={<CollectionNew current_user={props.current_user} createCollection={createCollection}/>}/>
+          <Route path="/aboutus" element={<AboutUs />}/>
+          <Route path="*" element={<NotFound />}/>
         </Routes>
         <Footer />
       </BrowserRouter>
