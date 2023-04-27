@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react"
 import { Form, FormGroup, Label, Input, Button } from "reactstrap"
-import { useNavigate, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 const CollectionEdit = ({ collections, current_user, updateCollection}) => {
 
   const [editCollection, setEditCollection] = useState()
   const [collectionName, setCollectionName] = useState()
-  const navigate = useNavigate()
   const { id } = useParams()
 
   useEffect(() => {
@@ -32,7 +31,6 @@ const CollectionEdit = ({ collections, current_user, updateCollection}) => {
 
   const handleSubmit = () => {
     updateCollection(editCollection, id)
-    navigate(`/collectionshow/${id}`)
   }
 
   if (editCollection) {

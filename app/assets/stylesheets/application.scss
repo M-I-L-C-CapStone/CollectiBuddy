@@ -24,8 +24,8 @@ nav.navbar a {
     font-family: "Kanit";
 }
 
-
 div .about-us-cards {
+
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -158,11 +158,12 @@ a {
 .btn {
     background-color: #A31621;
     box-shadow: 2px 2px black;
+    color: white;
 }
 
 .btn:hover {
     background-color: #A31621;
-    
+    color: white;
 }
 
 .btn a:hover {
