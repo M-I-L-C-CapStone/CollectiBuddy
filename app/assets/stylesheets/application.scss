@@ -210,11 +210,6 @@ a {
     margin-inline: 5%;
 }
 
-.toast{
-  z-index: 1000;
-  position: fixed;
-  margin-top: 5px;
-  }
 
 .card-header-devise {
     background-color: #A31621;
@@ -252,8 +247,11 @@ a {
     z-index: 100;
 }
 
-  margin-top: 4rem;
-}
+.toast{
+    z-index: 1000;
+    position: fixed;
+    margin-top: 4rem;
+  }
 
 .toast-header {
   background-color:#A31621;
