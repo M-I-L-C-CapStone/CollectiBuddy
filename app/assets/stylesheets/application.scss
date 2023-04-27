@@ -182,3 +182,36 @@ a {
   position: fixed;
   margin-top: 5px;
   }
+
+  .search{
+    border-radius: 10%;
+    padding: 5%;
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    width: 100px;
+    align-content: start;
+    align-items: right;
+    float: right;
+    // position: relative;    
+    // left: 980px;
+  }
+
+  .dataResult {
+    margin-top: 5px;
+    width: 100px;
+    height: 40px;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+  
+  .dataResult .dataItem {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    color: black;
+    overflow: hidden;
+  }
+  

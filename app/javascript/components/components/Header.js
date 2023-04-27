@@ -1,6 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import { NavLink } from "react-router-dom"
 import { Nav, NavItem, Navbar, NavbarBrand } from "reactstrap"
+import SearchBar from "./SearchBar.js"
 
 const Header = ({
   logged_in,
@@ -8,6 +9,7 @@ const Header = ({
   new_user_route,
   sign_in_route,
   sign_out_route,
+  collections
 }) => {
   return (
     <header>
@@ -25,6 +27,12 @@ const Header = ({
               <NavItem>
                 <a href={sign_out_route}>Sign Out</a>
               </NavItem>
+            <NavItem>
+              <div className="SearchBar">
+                
+                <SearchBar placeholder="Enter Item's Name..." collections={collections}/>
+              </div>
+            </NavItem>
             </>
           )}
           {!logged_in && (
