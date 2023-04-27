@@ -1,20 +1,20 @@
 import React from "react"
 import "@testing-library/jest-dom"
 import { render, screen, waitFor } from "@testing-library/react"
-import CollectionEdit from "../components/pages/CollectionEdit"
+import ModalEdit from "../components/pages/CollectionEdit"
 import { MemoryRouter, Routes, Route } from "react-router-dom"
 import { fireEvent } from "@testing-library/react"
 import  userEvent from "@testing-library/user-event"
 import collections from "../components/mockCollections"
 
-const mockedUseNavigate = jest.fn()
-
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockedUseNavigate,
-}))
-
-describe("<CollectionEdit />", () => {
+describe("<ModalEdit />", () => {
+  const editCollection = jest.fn()
+  const mockUseNavigate = jest.fn()
+ 
+  jest.mock('react-router-dom', () => ({
+    ...jest.requireActual('react-router-dom'),
+    useNavigate: () => mockUseNavigate
+  }))
 
   const user = {
       email: "test@testing.com",
@@ -27,7 +27,7 @@ describe("<CollectionEdit />", () => {
       <Routes>
         <Route
           path="/collectionedit/:id"
-          element={<CollectionEdit collections={collections} logged_in={true} user={user}/>}/>
+          element={<ModalEdit collections={collections} logged_in={true} user={user}/>}/>
       </Routes>
     </MemoryRouter>
     )
@@ -59,5 +59,25 @@ describe("<CollectionEdit />", () => {
 
     const updateButton = screen.getByRole("button", /update/i)
     expect(updateButton).toBeInTheDocument()
+  })
+
+  it("submits data on edit button click", () => {
+    renderPage()
+    let editButton = screen.getByText(/update/i)
+    userEvent.click(editButton)
+    waitFor(() => {expect(editCollection).toHaveBeenCalled()})
+    waitFor(() => {expect(mockUseNavigate).toHaveBeenCalled()})
+  })
+
+  it("handles changes to form data", () => {
+    renderPage()
+    let nameInput = screen.getByRole('textbox', {name: /name/i})
+    fireEvent.change(nameInput, {
+      target: {
+        value: 'test'
+      }
+    })
+    waitFor(() => {expect(editCollection).toHaveBeenCalled()})
+    waitFor(() => {expect(nameInput).toHaveValue('test')})
   })
 })

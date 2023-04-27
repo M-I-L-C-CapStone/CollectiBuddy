@@ -23,7 +23,6 @@ nav.navbar a {
     padding-inline: 10px;
 }
 
-
 .aboutcard{
     display: flex;
     flex-direction: row;
@@ -153,11 +152,12 @@ a {
 .btn {
     background-color: #A31621;
     box-shadow: 2px 2px black;
+    color: white;
 }
 
 .btn:hover {
     background-color: #A31621;
-    
+    color: white;
 }
 
 .btn a:hover {

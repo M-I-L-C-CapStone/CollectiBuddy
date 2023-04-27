@@ -1,9 +1,8 @@
 import React, { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { Form, FormGroup, Label, Button, Input } from "reactstrap"
+import { Form, FormGroup, Label, Input } from "reactstrap"
+import { NavLink } from 'react-router-dom'
 
 const CollectionNew = ({ current_user, createCollection }) => {
-  const navigate = useNavigate()
   const [myCollection, setMyCollection] = useState({
     name: "",
     category: "",
@@ -20,7 +19,6 @@ const CollectionNew = ({ current_user, createCollection }) => {
 
   const handleSubmit = () => {
     createCollection(myCollection)
-    navigate("/collectionindex")
   }
 
   return (
@@ -96,8 +94,7 @@ const CollectionNew = ({ current_user, createCollection }) => {
               />
               <Label for="image">Image</Label>
             </FormGroup>
-
-            <Button onClick={handleSubmit}>Add Item</Button>
+              <NavLink to={`/collectionindex`} onClick={handleSubmit} className="btn">Add Item</NavLink>
           </Form>
         </div>
       </div>
