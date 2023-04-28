@@ -9,7 +9,7 @@ const Header = ({
   new_user_route,
   sign_in_route,
   sign_out_route,
-  collections
+  collections,
 }) => {
   return (
     <header>
@@ -27,12 +27,15 @@ const Header = ({
               <NavItem>
                 <a href={sign_out_route}>Sign Out</a>
               </NavItem>
-            <NavItem>
-              <div className="SearchBar">
-                
-                <SearchBar placeholder="Enter Item's Name..." collections={collections}/>
-              </div>
-            </NavItem>
+              <NavItem>
+                <div className="SearchBar">
+                  <SearchBar
+                    placeholder="Enter Item's Name..."
+                    collections={collections}
+                    current_user={current_user}
+                  />
+                </div>
+              </NavItem>
             </>
           )}
           {!logged_in && (

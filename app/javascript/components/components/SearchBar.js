@@ -1,53 +1,65 @@
-import React, {useState} from 'react'
-import SearchIcon from '@mui/icons-material/Search';
-  const SearchBar = ({placeholder,collections}) => {
-    const [filteredData, setFilteredData] = useState([])
-    const [wordEntered, setWordEntered] = useState("")
+import React, { useState } from "react"
+import { useParams } from "react-router-dom"
+import SearchIcon from "@mui/icons-material/Search"
+import CloseIcon from "@mui/icons-material/Close"
 
-    const handleFilter=(e)=>{
-      const searchWord= e.target.value
-      setWordEntered(searchWord)
-      const newFilter= collections.filter((value)=>{
-        return value.name.toLowerCase().includes(searchWord.toLowerCase())
-      })
-      if (searchWord===""){
-        setFilteredData([])
-      } else {
-        setFilteredData(newFilter)
-      }
-    }
+const SearchBar = ({ placeholder, collections, current_user }) => {
+  const [filteredData, setFilteredData] = useState([])
+  const [wordEntered, setWordEntered] = useState("")
+  const currentCollection = collections?.filter(
+    (collection) => current_user?.id === collection.user_id
+  )
 
-    const clearInput = () => {
+  const handleFilter = (e) => {
+    const searchWord = e.target.value
+    setWordEntered(searchWord)
+    const newFilter = currentCollection.filter((value) => {
+      return value.name.toLowerCase().includes(searchWord.toLowerCase())
+    })
+    if (searchWord === "") {
       setFilteredData([])
-      setWordEntered("")
+    } else {
+      setFilteredData(newFilter)
     }
+  }
 
+  const clearInput = () => {
+    setFilteredData([])
+    setWordEntered("")
+  }
 
   return (
-      <>
-       <div className="search">
-          <div className="searchInput">
-            <input type="text" placeholder={placeholder} value={wordEntered} onChange={handleFilter}/>
-            <div className="searchIcon">
-              {/* Lines 32 - 36 can be deleted if no use for when trying to style. */}
+    <>
+      <div className="search">
+        <div className="searchInput">
+          <input
+            type="text"
+            placeholder={placeholder}
+            value={wordEntered}
+            onChange={handleFilter}
+          />
+          <div className="searchIcon">
+            {/* Lines 32 - 36 can be deleted if no use for when trying to style. */}
             {filteredData.length === 0 ? (
-            <SearchIcon />
-          ) : (
-            <CloseIcon id="clearBtn" onClick={clearInput} />
-          )}
-            </div>
+              <SearchIcon />
+            ) : (
+              <CloseIcon id="clearBtn" onClick={clearInput} />
+            )}
           </div>
-          {filteredData.length != 0 && 
+        </div>
+        {filteredData.length != 0 && (
           <div className="dataResult">
             {filteredData.map((value, key) => {
               return (
-                <a className="dataItem" href={`/collectionshow/${value.id}`}><p>{value.name}</p></a>
-                )
+                <a className="dataItem" href={`/collectionshow/${value.id}`}>
+                  <p>{value.name}</p>
+                </a>
+              )
             })}
           </div>
-  }
-        </div>
-        </>
+        )}
+      </div>
+    </>
   )
 }
-  export default SearchBar
+export default SearchBar
