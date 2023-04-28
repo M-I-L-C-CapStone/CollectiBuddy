@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Modal, ModalBody, ModalHeader } from "reactstrap"
 import { Form, FormGroup, Label, Input, Button } from "reactstrap"
 import { useParams } from "react-router-dom"
-//test comments
+
 const ModalEdit = ({ currentCollection, current_user, updateCollection, toggle, modal }) => {
     const [editCollection, setEditCollection] = useState({
         name: currentCollection.name,
