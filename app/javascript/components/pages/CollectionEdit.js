@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react"
 import { Form, FormGroup, Label, Input, Button } from "reactstrap"
-import { useNavigate, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
-const CollectionEdit = ({ collections, current_user, updateCollection }) => {
+const CollectionEdit = ({ collections, current_user, updateCollection}) => {
+
   const [editCollection, setEditCollection] = useState()
   const [collectionName, setCollectionName] = useState()
-  const navigate = useNavigate()
   const { id } = useParams()
+
   useEffect(() => {
     if (collections.length > 0) {
       let currentCollection = collections.find(
@@ -30,8 +31,8 @@ const CollectionEdit = ({ collections, current_user, updateCollection }) => {
 
   const handleSubmit = () => {
     updateCollection(editCollection, id)
-    navigate(`/collectionshow/${id}`)
   }
+
   if (editCollection) {
     return (
       <>
@@ -100,7 +101,6 @@ const CollectionEdit = ({ collections, current_user, updateCollection }) => {
                 />
                 <Label for="image">Image</Label>
               </FormGroup>
-
               <Button onClick={handleSubmit}>Update {collectionName}</Button>
             </Form>
           </div>

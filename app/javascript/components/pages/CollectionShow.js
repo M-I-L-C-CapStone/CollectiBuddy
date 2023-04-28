@@ -1,9 +1,8 @@
-import React from "react"
-import { NavLink, useParams, useNavigate } from "react-router-dom"
+import React, { useState } from "react"
+import { useParams } from "react-router-dom"
 import {
   Card,
   CardBody,
-  Button,
   CardTitle,
   CardFooter,
   CardImg,
@@ -11,17 +10,21 @@ import {
   ListGroup,
   ListGroupItem,
 } from "reactstrap"
+import ModalEdit from "./ModalEdit"
+import { NavLink } from 'react-router-dom'
 
-const CollectionShow = ({ collections, deleteCollection }) => {
+const CollectionShow = ({ updateCollection, collections, deleteCollection}) => {
+  const [modal, setModal] = useState(false)
+  const toggle = () => setModal(!modal)
+
   let { id } = useParams()
-  const navigate = useNavigate()
+  
   const currentCollection = collections?.find(
     (collection) => collection.id === +id
   )
 
   const handleSubmit = () => {
     deleteCollection(currentCollection.id)
-    navigate("/collectionindex")
   }
 
   return (
@@ -50,12 +53,8 @@ const CollectionShow = ({ collections, deleteCollection }) => {
                 </ListGroupItem>
               </ListGroup>
               <CardFooter>
-                <Button>
-                  <NavLink to={`/collectionedit/${currentCollection.id}`}>
-                    Edit
-                  </NavLink>
-                </Button>
-                <Button onClick={handleSubmit}>Delete</Button>
+                  <ModalEdit currentCollection={currentCollection} updateCollection={updateCollection} modal={modal} toggle={toggle}/>
+                  <NavLink to={`/collectionindex`} onClick={handleSubmit} className="btn">Delete</NavLink>
               </CardFooter>
             </Card>
           </div>

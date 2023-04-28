@@ -4,6 +4,7 @@ import Home from "../components/pages/Home"
 import { BrowserRouter } from "react-router-dom"
 import "@testing-library/jest-dom"
 import fireEvent from "@testing-library/user-event"
+import userEvent from "@testing-library/user-event"
 
 describe("<Home />", () => {
   const homeRender = () => {
