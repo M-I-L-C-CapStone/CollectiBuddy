@@ -31,7 +31,7 @@ const SearchBar = ({ placeholder, collections, current_user }) => {
   return (
     <>
       <div className="search">
-        <div className="searchInput">
+        <div className="search-input">
           <input
             type="text"
             placeholder={placeholder}
@@ -39,7 +39,6 @@ const SearchBar = ({ placeholder, collections, current_user }) => {
             onChange={handleFilter}
           />
           <div className="searchIcon">
-            {/* Lines 32 - 36 can be deleted if no use for when trying to style. */}
             {filteredData.length === 0 ? (
               <SearchIcon />
             ) : (

@@ -183,51 +183,63 @@ a {
   margin-top: 5px;
   }
 
-  .search{
-    border-radius: 10%;
-    padding: 5%;
+.search-input {
+  display: flex;
+  align-self: flex-end;
+  
+}
+div .nav-item .SearchBar {
+  margin-left: auto;
+}
+.search input{
+    border-radius: 10px;
+    padding-left: 25px;
     border-color: rgb(0, 0, 0);
     color: rgb(0, 0, 0);
-    width: 100px;
-    height: 100px;
-    align-content: start;
-    align-items: right;
-    float: right;
-    // position: relative;    
-    // left: 980px;
-  }
+    width: 200px;
+    height: 25px;
+}
 
-  .searchIcon { //Line 200 to 213 are for the icon , We can delete it if it will not go in search bar.
+.search ::placeholder {
+  text-align: left;
+}
+
+.searchIcon { 
     height: 22px;
     width: 22px;
-    // background-color: white;
     display: grid;
-    place-items:right;
-  }
+    place-items: center;
+    z-index: 1000;
+    position:absolute;
+}
   
-  input:focus {
+input:focus {
     outline: none;
-  }
+}
   .searchIcon svg {
     font-size: 25px;
   }
 
-  .dataResult {
-    margin-top: 5px;
-    width: 100px;
-    height: 40px;
+.dataResult {
+    margin-top: 1px;
+    margin-left: 5px;
+    border-bottom-left-radius: 5px;
+    width: 191px;
+    height: 50px;
     background-color: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     overflow: hidden;
     overflow-y: auto;
-  }
+    z-index: 1000;
+    position: absolute;
+}
   
-  .dataResult .dataItem {
+.dataResult .dataItem {
     width: 100%;
     height: 40px;
     display: flex;
     align-items: center;
     color: black;
     overflow: hidden;
-  }
+}
   

@@ -15,7 +15,7 @@ const Header = ({
     <header>
       <Navbar fixed="top" expand dark>
         <NavbarBrand href="/">Collecti🤖Buddy</NavbarBrand>
-        <Nav className="me-auto" navbar>
+        <Nav className="container-fluid" navbar>
           {logged_in && (
             <>
               <NavItem>
@@ -27,10 +27,10 @@ const Header = ({
               <NavItem>
                 <a href={sign_out_route}>Sign Out</a>
               </NavItem>
-              <NavItem>
+              <NavItem className="ms-auto">
                 <div className="SearchBar">
                   <SearchBar
-                    placeholder="Enter Item's Name..."
+                    placeholder="Search"
                     collections={collections}
                     current_user={current_user}
                   />
