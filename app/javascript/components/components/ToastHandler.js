@@ -8,7 +8,13 @@ const ToastHandler = ({ toastMessage }) => {
     if (toastMessage.header !== "") {
       setToastDisplay(true)
     }
-  }, [toastMessage])
+  },[toastMessage])
+  
+  setTimeout(() => {
+    if(toastDisplay === true){
+      setToastDisplay(false)
+    }
+  }, 5000)
 
   return (
     <Toast className="toast" isOpen={toastDisplay}>
