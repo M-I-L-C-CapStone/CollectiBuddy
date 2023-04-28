@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
-// import { Input } from 'reactstrap'
-// import searchIcon from "src/elements/Icon/Icon.js"
+import SearchIcon from '@mui/icons-material/Search';
   const SearchBar = ({placeholder,collections}) => {
     const [filteredData, setFilteredData] = useState([])
     const [wordEntered, setWordEntered] = useState("")
@@ -30,7 +29,12 @@ import React, {useState} from 'react'
           <div className="searchInput">
             <input type="text" placeholder={placeholder} value={wordEntered} onChange={handleFilter}/>
             <div className="searchIcon">
-
+              {/* Lines 32 - 36 can be deleted if no use for when trying to style. */}
+            {filteredData.length === 0 ? (
+            <SearchIcon />
+          ) : (
+            <CloseIcon id="clearBtn" onClick={clearInput} />
+          )}
             </div>
           </div>
           {filteredData.length != 0 && 

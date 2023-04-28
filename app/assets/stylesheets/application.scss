@@ -189,11 +189,27 @@ a {
     border-color: rgb(0, 0, 0);
     color: rgb(0, 0, 0);
     width: 100px;
+    height: 100px;
     align-content: start;
     align-items: right;
     float: right;
     // position: relative;    
     // left: 980px;
+  }
+
+  .searchIcon { //Line 200 to 213 are for the icon , We can delete it if it will not go in search bar.
+    height: 22px;
+    width: 22px;
+    // background-color: white;
+    display: grid;
+    place-items:right;
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  .searchIcon svg {
+    font-size: 25px;
   }
 
   .dataResult {
