@@ -87,7 +87,7 @@ const App = (props) => {
   return (
     <>
       <BrowserRouter>
-        <Header {...props} />
+        <Header {...props} collections={collections}/>
         <ToastHandler toastMessage={toastMessage} />
         <Routes>
           <Route path="/" element={<Home />}/>
