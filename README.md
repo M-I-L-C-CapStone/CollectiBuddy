@@ -24,17 +24,11 @@ This app was created for users who need a way to keep track of their collectible
 
 - The app includes a unique not found page that a user is redirected to in the event of a client 404.
 
-- Testing for the Front-End is currently at 83%.
+- Testing for the Front-End is currently at 84.5%.
 
 ### Front-End To-Do
 
-- Toast popups whenever a user creates, updates, or deletes an item in their collection.
-
-- Modal dropdown with an edit form instead of navigating to a new page.
-
 - Popover/tooltip to explain what information is required when creating or editing an item.
-
-- Search bar in the app header to allow users to search for specific items in their collection.
 
 - Filter functionality on index page
 
@@ -59,13 +53,15 @@ This app was created for users who need a way to keep track of their collectible
 
 - Controller methods for index, new, update, and delete for Collection, with request specs for each. Create and update throw 422 errors if an invalid instance of Collection is initialized.
 
+- 100% testing coverage.
+
 ### Back-End To-Do
 
 - Set up fetch requests to an external API (TBD)
 
 ## App Live Version
 
-- (hosting on render soon)
+- https://collectibuddy.onrender.com/
 
 ## Running This App Locally
 
@@ -95,6 +91,8 @@ This app was created for users who need a way to keep track of their collectible
 
 - React-DOM
 
+- Material UI
+
 - [endwise](https://github.com/kaiwood/vscode-endwise)
 
 - [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
@@ -105,8 +103,8 @@ This app was created for users who need a way to keep track of their collectible
 
 - [Michael Rogers](https://github.com/mikerogers04)
 
--[Ira Holmes](https://github.com/iraholmes)
+- [Ira Holmes](https://github.com/iraholmes)
 
--[Leopoldo Cuero](https://github.com/Melaza6)
+- [Leopoldo Cuero](https://github.com/Melaza6)
 
--[CJ Norris](https://github.com/cmnorrisii)
+- [CJ Norris](https://github.com/cmnorrisii)
