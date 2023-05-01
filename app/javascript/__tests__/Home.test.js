@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState as useStateMock }from "react"
 import { render, screen } from "@testing-library/react"
 import Home from "../components/pages/Home"
 import { BrowserRouter } from "react-router-dom"

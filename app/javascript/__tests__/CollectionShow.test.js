@@ -1,9 +1,11 @@
 import React from "react"
 import "@testing-library/jest-dom"
-import { render, screen } from "@testing-library/react"
+import { render, screen, fireEvent } from "@testing-library/react"
 import { MemoryRouter, Route, Routes } from "react-router-dom"
 import CollectionShow from "../components/pages/CollectionShow"
 import collections from "../components/mockCollections"
+
+const deleteCollection = jest.fn()
 
 describe("<CollectionShow />", () => {
   beforeEach(() => {
@@ -22,6 +24,7 @@ describe("<CollectionShow />", () => {
               <CollectionShow
                 collections={collections}
                 current_user={current_user}
+                deleteCollection={deleteCollection}
               />
             }
           />
@@ -52,5 +55,14 @@ describe("<CollectionShow />", () => {
   it("displays a button for delete", () => {
     const deleteButton = screen.getByText(/delete/i)
     expect(deleteButton).toBeInTheDocument()
+  })
+
+  it("tests the handleSubmit works upon clicking the delete item button", () => {
+    fireEvent(
+    screen.getByRole('link', 'Delete'), 
+    new MouseEvent('click', {
+      bubbles: true,
+      cancelable: true,
+    }) )
   })
 })

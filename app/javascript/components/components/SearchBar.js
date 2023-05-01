@@ -1,11 +1,11 @@
 import React, { useState } from "react"
-import { useParams } from "react-router-dom"
 import SearchIcon from "@mui/icons-material/Search"
 import CloseIcon from "@mui/icons-material/Close"
 
 const SearchBar = ({ placeholder, collections, current_user }) => {
   const [filteredData, setFilteredData] = useState([])
   const [wordEntered, setWordEntered] = useState("")
+
   const currentCollection = collections?.filter(
     (collection) => current_user?.id === collection.user_id
   )
