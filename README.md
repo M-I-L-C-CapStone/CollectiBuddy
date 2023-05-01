@@ -61,7 +61,7 @@ This app was created for users who need a way to keep track of their collectible
 
 ## App Live Version
 
-- (hosting on render soon)
+- https://collectibuddy.onrender.com/
 
 ## Running This App Locally
 
