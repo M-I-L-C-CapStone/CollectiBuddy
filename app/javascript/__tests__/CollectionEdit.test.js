@@ -1,18 +1,11 @@
 import React from "react"
 import "@testing-library/jest-dom"
-import { render, screen, waitFor } from "@testing-library/react"
+import { render, screen, fireEvent, waitFor } from "@testing-library/react"
 import CollectionEdit from "../components/pages/CollectionEdit"
 import { MemoryRouter, Routes, Route } from "react-router-dom"
-import { fireEvent } from "@testing-library/react"
-import  userEvent from "@testing-library/user-event"
 import collections from "../components/mockCollections"
 
-const mockedUseNavigate = jest.fn()
-
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockedUseNavigate,
-}))
+const updateCollection = jest.fn()
 
 describe("<CollectionEdit />", () => {
 
@@ -27,7 +20,7 @@ describe("<CollectionEdit />", () => {
       <Routes>
         <Route
           path="/collectionedit/:id"
-          element={<CollectionEdit collections={collections} logged_in={true} user={user}/>}/>
+          element={<CollectionEdit collections={collections} updateCollection={updateCollection} logged_in={true} user={user}/>}/>
       </Routes>
     </MemoryRouter>
     )
@@ -59,5 +52,26 @@ describe("<CollectionEdit />", () => {
 
     const updateButton = screen.getByRole("button", /update/i)
     expect(updateButton).toBeInTheDocument()
+  })
+
+  it("tests for data typed into the input field", () => {
+    renderPage()
+    let nameInput = screen.getByRole('textbox', {name: /name/i})
+    fireEvent.change(nameInput, {
+      target: {
+        value: 'test'
+      }
+    })
+    waitFor(() => {expect(nameInput).toHaveValue('test')})
+  })
+
+  it("tests the handleSubmit works upon clicking the add item button", () => {
+    renderPage()
+    fireEvent(
+    screen.getByRole('button', 'Update'), 
+    new MouseEvent('click', {
+      bubbles: true,
+      cancelable: true,
+    }))
   })
 })

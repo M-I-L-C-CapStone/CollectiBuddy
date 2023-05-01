@@ -9,7 +9,6 @@ import mikeImage from "./components/assets/image.png"
 import cjImage from "./components/assets/pfp.png"
 import linkedin from "./components/assets/linkedin.png"
 import github from "./components/assets/github.png"
-import userEvent from "@testing-library/user-event"
 
 describe("<AboutUs />", () => {
   const aboutUsRender = () => {

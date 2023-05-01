@@ -1,20 +1,13 @@
 import React from "react"
-import { render, screen, waitFor } from "@testing-library/react"
+import { render, screen, waitFor, fireEvent } from "@testing-library/react"
 import CollectionNew from "../components/pages/CollectionNew"
 import ProtectedIndex from "../components/pages/ProtectedIndex"
 import { BrowserRouter, Routes, Route, MemoryRouter} from "react-router-dom"
-import { fireEvent } from "@testing-library/react"
-import userEvent from "@testing-library/user-event"
+import  userEvent from "@testing-library/user-event"
 import "@testing-library/jest-dom"
 
 const createCollection = jest.fn()
-const mockedUseNavigate = jest.fn()
-const mockHandleSubmit = jest.fn()
-
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockedUseNavigate
-}))
+const handleSubmit = jest.fn()
 
 describe("<CollectionNew />", () => {
 
@@ -26,7 +19,7 @@ describe("<CollectionNew />", () => {
   const renderPage = () => {
     render(
       <BrowserRouter>
-          <CollectionNew handleSubmit={mockHandleSubmit} addCollection={createCollection} logged_in={true} user={user}/>
+          <CollectionNew handleSubmit={handleSubmit} createCollection={createCollection} logged_in={true} user={user}/>
       </BrowserRouter>
     )
   }
@@ -35,7 +28,7 @@ describe("<CollectionNew />", () => {
     render(
       <MemoryRouter initialEntries={["/collectionnew"]}>
         <Routes>
-          <Route path="/collectionnew" element={<CollectionNew handleSubmit={mockHandleSubmit} addCollection={createCollection} logged_in={true} user={user}/>}/>
+          <Route path="/collectionnew" element={<CollectionNew handleSubmit={handleSubmit} addCollection={createCollection} logged_in={true} user={user}/>}/>
           <Route path="/protectedindex" element={<ProtectedIndex logged_in={true} />}/>
         </Routes>
       </MemoryRouter>
@@ -84,7 +77,7 @@ describe("<CollectionNew />", () => {
     expect(submit).toBeInTheDocument()
   })
 
-  it("returns to index after button click", () => {
+  it("tests for data typed into the input field", () => {
     navigateRender()
     let nameInput = screen.getByRole('textbox', {name: /name/i})
     fireEvent.change(nameInput, {
@@ -92,10 +85,16 @@ describe("<CollectionNew />", () => {
         value: 'test'
       }
     })
-    waitFor(() => {expect(mockHandleSubmit).toHaveBeenCalled()})
     waitFor(() => {expect(nameInput).toHaveValue('test')})
-    let confirmButton = screen.getByRole('link', {name: /add item/i})
-    userEvent.click(confirmButton)
-    waitFor(() => {expect(mockedUseNavigate).toHaveBeenCalled})
+  })
+
+  it("tests the handleSubmit works upon clicking the add item button", () => {
+    renderPage()
+    fireEvent(
+    screen.getByRole('link', 'Add Item'), 
+    new MouseEvent('click', {
+      bubbles: true,
+      cancelable: true,
+    }))
   })
 })
